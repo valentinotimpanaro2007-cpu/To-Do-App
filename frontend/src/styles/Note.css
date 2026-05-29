@@ -1,0 +1,144 @@
+.note-container {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+
+  padding: 18px 22px;
+  border-radius: 18px;
+
+  border: 1px solid rgba(99, 102, 241, 0.08);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.06),
+    0 2px 10px rgba(0,0,0,0.03);
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* TOP GRADIENT LINE */
+.note-container::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #8b5cf6,
+    #06b6d4
+  );
+}
+
+/* HOVER */
+.note-container:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(99, 102, 241, 0.2);
+
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.10),
+    0 4px 12px rgba(0,0,0,0.05);
+}
+
+.note-content-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.note-title {
+  color: #111827;
+
+  font-weight: 700;
+  font-size: 17px;
+
+  margin-bottom: 6px;
+
+  letter-spacing: -0.3px;
+
+  word-break: break-word;
+}
+
+.note-content {
+  color: #6b7280;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  margin-bottom: 8px;
+
+  word-break: break-word;
+}
+
+.note-date {
+  color: #9ca3af;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* DELETE BUTTON */
+.delete-button {
+  background: rgba(239, 68, 68, 0.08);
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+
+  color: #ef4444;
+
+  padding: 10px 16px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  transition:
+    all 0.25s ease,
+    transform 0.15s ease;
+}
+
+/* BUTTON HOVER */
+.delete-button:hover {
+  background: #ef4444;
+  color: white;
+
+  transform: scale(1.05);
+
+  box-shadow:
+    0 8px 20px rgba(239, 68, 68, 0.35);
+}
+
+/* CLICK EFFECT */
+.delete-button:active {
+  transform: scale(0.96);
+}
+
+.note-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.note-container.completed .note-title,
+.note-container.completed .note-content {
+  text-decoration: line-through;
+  color: #bbb;
+}
