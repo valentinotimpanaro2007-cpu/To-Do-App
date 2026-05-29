@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'          // Vite-Konfigurationsfunktion
+import react from '@vitejs/plugin-react'     // React-Plugin für Vite
 
-// https://vite.dev/config/
+// Vite-Konfiguration: definiert Build- und Dev-Server-Einstellungen
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react()],   // React-Unterstützung aktivieren
 })

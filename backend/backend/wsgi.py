@@ -1,16 +1,16 @@
 """
-WSGI config for backend project.
+WSGI-Konfiguration für das Backend-Projekt.
 
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/6.0/howto/deployment/wsgi/
+WSGI (Web Server Gateway Interface) ist der Standard,
+um Django mit Produktionsservern (z.B. Apache, Nginx) zu verbinden.
 """
 
 import os
 
 from django.core.wsgi import get_wsgi_application
 
+# Welche settings.py verwendet werden soll
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 
+# WSGI-Anwendung - von Servern (wie Gunicorn) referenziert
 application = get_wsgi_application()
